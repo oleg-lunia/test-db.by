@@ -382,6 +382,25 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "MuseoSansCyrl-500";
+  src: url("../fonts/MuseoSansCyrl-500.woff2") format("woff2"), url("../fonts/MuseoSansCyrl-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MuseoSansCyrl-300";
+  src: url("../fonts/MuseoSansCyrl-300.woff2") format("woff2"), url("../fonts/MuseoSansCyrl-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: "MuseoSansCyrl-900";
+  src: url("../fonts/MuseoSansCyrl-900.woff2") format("woff2"), url("../fonts/MuseoSansCyrl-900.woff") format("woff");
+}
+
+* {
+  font-family: "MuseoSansCyrl-500";
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -468,11 +487,17 @@ button {
   font-size: 18px;
   line-height: 22px;
   color: #000000;
-  padding: 21px 27px;
+  padding: 20px 22px;
 }
 
 .header-nav a:hover {
   background-color: #e69a37;
+  color: #ffffff;
+}
+
+.header-nav .active {
+  background-color: #323232;
+  color: #ffffff;
 }
 
 .preview-slider {
@@ -481,14 +506,14 @@ button {
 
 .preview-slider .preview-slider-btn {
   position: absolute;
-  bottom: 43px;
+  bottom: 41px;
   left: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  -webkit-transform: translate(-57%, 0);
+      -ms-transform: translate(-57%, 0);
+          transform: translate(-57%, 0);
 }
 
 .preview-slider .preview-slider-btn .preview-btn-item {
@@ -507,6 +532,10 @@ button {
   background-color: #ffffff;
 }
 
+.preview-slider .preview-slider-btn .preview-btn-item.active {
+  background-color: #e69a37;
+}
+
 .preview-slider-item {
   position: relative;
   height: 670px;
@@ -522,17 +551,20 @@ button {
 
 .preview-slider-item .preview-item-header {
   position: absolute;
-  top: 113px;
-  left: 375px;
+  top: 17%;
+  left: 20%;
+  -webkit-transform: translate(-1.5%, 0.5%);
+      -ms-transform: translate(-1.5%, 0.5%);
+          transform: translate(-1.5%, 0.5%);
 }
 
-.preview-item-header h3,
-.preview-item-header h1,
-.preview-item-header p {
+.preview-slider-item .preview-item-header h3,
+.preview-slider-item .preview-item-header h1,
+.preview-slider-item .preview-item-header p {
   color: #ffffff;
 }
 
-.preview-item-header h3 {
+.preview-slider-item .preview-item-header h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,17 +583,19 @@ button {
           justify-content: center;
 }
 
-.preview-item-header h1 {
+.preview-slider-item .preview-item-header h1 {
   font-size: 60px;
   line-height: 68px;
   max-width: 580px;
   margin: 18px 0px;
+  font-family: "MuseoSansCyrl-900";
 }
 
-.preview-item-header p {
-  max-width: 650px;
+.preview-slider-item .preview-item-header p {
+  max-width: 660px;
   font-size: 22px;
   line-height: 28px;
+  font-family: "MuseoSansCyrl-300";
 }
 
 .footer-nav {
@@ -593,11 +627,12 @@ button {
   font-size: 14px;
   line-height: 20px;
   color: #323232;
-  padding: 26px 23px;
+  padding: 26px 22px;
 }
 
 .footer-list .footer-list-item a:hover {
   text-decoration: underline;
+  background-color: #f3f3f3;
 }
 
 .footer-list .footer-list-item svg {
@@ -611,7 +646,7 @@ button {
 }
 
 .footer-list .footer-list-item p {
-  max-width: 129px;
+  max-width: 131px;
 }
 
 .footer-block {

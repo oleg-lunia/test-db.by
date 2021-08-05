@@ -1,4 +1,9 @@
 @import "./normalize";
+@import "./fonts.scss";
+
+* {
+  font-family: "MuseoSansCyrl-500";
+}
 
 ul {
   list-style: none;
@@ -69,11 +74,17 @@ button {
     font-size: 18px;
     line-height: 22px;
     color: #000000;
-    padding: 21px 27px;
+    padding: 20px 22px;
   }
 
   a:hover {
     background-color: #e69a37;
+    color: #ffffff;
+  }
+
+  .active {
+    background-color: #323232;
+    color: #ffffff;
   }
 
 }
@@ -83,10 +94,10 @@ button {
   
   .preview-slider-btn {
     position: absolute;
-    bottom: 43px;
+    bottom: 41px;
     left: 50%;
     display: flex;
-    transform: translate(-50%, 0);
+    transform: translate(-57%, 0);
 
     .preview-btn-item {
       width: 12px;
@@ -102,6 +113,10 @@ button {
 
     .preview-btn-item:hover {
       background-color: #ffffff;
+    }
+
+    .preview-btn-item.active {
+      background-color: #e69a37;
     }
     
   }
@@ -121,44 +136,43 @@ button {
 
   .preview-item-header {
     position: absolute;
-    top: 113px;
-    left: 375px;
-  }
+    top: 17%;
+    left: 20%;
+    transform: translate(-1.5%, 0.5%);;
 
-}
-
-.preview-item-header {
-
-  h3,
-  h1,
-  p {
-    color: #ffffff;
-  }
-
-  h3 {
-    display: flex;
-    background-color: #e69a37;
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    width: 228px;
-    height: 38px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: 60px;
-    line-height: 68px;
-    max-width: 580px;
-    margin: 18px 0px;
-  }
-
-  p {
-    max-width: 650px;
-    font-size: 22px;
-    line-height: 28px;
+    h3,
+    h1,
+    p {
+      color: #ffffff;
+    }
+  
+    h3 {
+      display: flex;
+      background-color: #e69a37;
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      width: 228px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    h1 {
+      font-size: 60px;
+      line-height: 68px;
+      max-width: 580px;
+      margin: 18px 0px;
+      font-family: "MuseoSansCyrl-900";
+    }
+  
+    p {
+      max-width: 660px;
+      font-size: 22px;
+      line-height: 28px;
+      font-family: "MuseoSansCyrl-300";
+    }
   }
 
 }
@@ -181,11 +195,12 @@ button {
       font-size: 14px;
       line-height: 20px;
       color: #323232;
-      padding: 26px 23px;
+      padding: 26px 22px;
     }
 
     a:hover {
       text-decoration: underline;
+      background-color: #f3f3f3;
     }
 
     svg {
@@ -199,7 +214,7 @@ button {
     }
 
     p {
-      max-width: 129px;
+      max-width: 131px;
     }
 
   }
