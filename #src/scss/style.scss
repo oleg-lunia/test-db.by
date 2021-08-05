@@ -132,6 +132,8 @@ header {
   position: relative;
   height: 670px;
   overflow: hidden;
+  animation-name: fade;
+  animation-duration: 1.5s;
 
   img {
     width: 100%;
@@ -183,9 +185,22 @@ header {
 
 }
 
+@keyframes fade {
+
+  from {
+    opacity: 0.4
+  }
+
+  to {
+    opacity: 1
+  }
+
+}
+
 .footer-nav {
 
-  .footer-btn {
+  .footer-btn-next,
+  .footer-btn-prev {
     display: none;
   }
 
@@ -195,8 +210,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 
   .footer-list-item {
+    display: block;
     
     a {
       display: flex;
@@ -227,6 +245,53 @@ header {
       max-width: 131px;
     }
 
+  }
+
+  .footer-list-item.active,
+  .footer-list-item.next {
+    display: flex;
+  }
+
+  .footer-list-item.next {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .to-left {
+    animation-name: left;
+  }
+  
+  .from-right {
+    animation-name: right;
+  }
+  
+  .to-right {
+    animation-name: right;
+    animation-direction: reverse;
+  }
+  
+  .from-left {
+    animation-name: left;
+    animation-direction: reverse;
+  }
+  
+  @keyframes left {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+  
+  @keyframes right {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0;
+    }
   }
 
 }
@@ -387,7 +452,7 @@ header {
 
   }
 
-  .menu-burger__header {
+  .menu-burger-header {
     position: relative; 
     width: 40px;
     height: 35px;
@@ -397,9 +462,9 @@ header {
     z-index: 10;
   }
 
-  .menu-burger__header span,
-  .menu-burger__header:after,
-  .menu-burger__header:before{
+  .menu-burger-header span,
+  .menu-burger-header:after,
+  .menu-burger-header:before{
     height: 3px;
     width: 100%;
     position: absolute;
@@ -408,35 +473,35 @@ header {
     z-index: 10;
   }
 
-  .menu-burger__header span{
+  .menu-burger-header span{
     top: 21px;
   }
 
-  .menu-burger__header:after, .menu-burger__header:before{
+  .menu-burger-header:after, .menu-burger-header:before{
     content: '';
   }
 
-  .menu-burger__header:after{
+  .menu-burger-header:after{
     bottom: -5px;
   }
 
-  .menu-burger__header:before{
+  .menu-burger-header:before{
     top: 5px;
   }
 
-  .menu-burger__header.open-menu span {
+  .menu-burger-header.open-menu span {
     opacity:0; 
     transition: 0.5s;
   }
 
-  .menu-burger__header.open-menu:before {
+  .menu-burger-header.open-menu:before {
     transform: rotate(-45deg);
     top: 16px;
     transition: 0.4s;
     background-color: #ffffff;
   }
 
-  .menu-burger__header.open-menu:after {
+  .menu-burger-header.open-menu:after {
     transform: rotate(45deg);
     bottom: 15px;
     transition: 0.4s;
@@ -502,26 +567,6 @@ header {
     justify-content: center;
     width: 556px;
     margin: 0 auto;
-
-    .footer-btn {
-      display: block;
-      width: 24px;
-      height: 24px;
-      fill: none;
-      padding: 5px;
-      cursor: pointer;
-    }
-
-    .footer-btn:hover {
-      background-color: #e69a37;
-      border-radius: 50%;
-
-      path {
-        stroke: #ffffff;
-      }
-
-    }
-
   }
 
   .footer-list {
@@ -536,18 +581,15 @@ header {
 
       a {
         height: 140px;
-        padding: 6px 7.3px;
+        padding: 6px 0;
         flex-direction: column;
+        font-size: 13px;
       }
 
       p {
         text-align: center;
       }
 
-    }
-
-    .footer-list-item:nth-child(5) {
-      display: none;
     }
 
   }
@@ -597,9 +639,25 @@ header {
   .footer-nav {
     width: 100%;
 
-    .footer-btn {
+    .footer-btn-next,
+    .footer-btn-prev {
+      display: block;
       width: 30px;
       height: 30px;
+      fill: none;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .footer-btn-next:hover,
+    .footer-btn-prev:hover {
+      background-color: #e69a37;
+      border-radius: 50%;
+
+      path {
+        stroke: #ffffff;
+      }
+
     }
 
   }
@@ -608,18 +666,13 @@ header {
     margin: 0 15px;
 
     .footer-list-item {
+      display: none;
 
       svg {
         width: 45px;
         height: 45px;
       }
 
-    }
-
-    .footer-list-item:nth-child(4),
-    .footer-list-item:nth-child(3),
-    .footer-list-item:nth-child(2) {
-      display: none;
     }
 
   }
